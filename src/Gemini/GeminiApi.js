@@ -2,7 +2,7 @@ import { GoogleGenAI } from "@google/genai";
 
 // The client gets the API key from the environment variable `GEMINI_API_KEY`.
 const ai = new GoogleGenAI({
-  apiKey: "AIzaSyCqyvkdotH0gtMPNlebxqGmlqBswAihlrk",
+  apiKey: "AIzaSyBP4akB1jSrVxRQLUM-2DC0j3UxhrJ5aUI",
 });
 
 export async function API(prompt,extractedText) {

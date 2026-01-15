@@ -70,23 +70,20 @@ const RegisterPage = () => {
               setRePassword(e.target.value);
             }}
           />
-          <div className="flex justify-between mt-8 gap-3">
-            <Link to="/" className="flex-1">
-              <button
-                type="submit"
-                className="w-full h-full border-2 border-[#1e293b] dark:border-gray-600 flex-1 p-2.5 rounded-lg bg-white dark:bg-transparent hover:bg-gray-50 dark:hover:bg-slate-800 text-[#1e293b] dark:text-gray-300 font-medium transition-all cursor-pointer"
-              >
-                Login
-              </button>
-            </Link>
+          <div className="  flex justify-center w-full mt-8 ">
+            
             <button
               type="submit"
-              className="border-0 flex-1 max-w-50 p-2.5 rounded-lg bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold transition-all shadow-lg cursor-pointer" onClick={handleSubmit}
+              className="border-0 w-full max-w-80 p-2.5 rounded-lg bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold transition-all shadow-lg cursor-pointer" onClick={handleSubmit}
             >
               Create Account
             </button>
 
           </div>
+
+            <div className="text-center mt-5">
+              <p>Already have an account?<Link to="/" className="text-[#7c3aed] font-bold underline" > Login</Link></p> 
+            </div> 
         </div>
       </div>
     </div>

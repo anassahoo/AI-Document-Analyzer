@@ -65,6 +65,7 @@ const MainContent = () => {
 Summarize the following text clearly and concisely.
 
 Rules:
+- First give main heading about document which should be bold 
 - Use simple, easy-to-understand language
 - Keep only the most important points
 - Do NOT add your own opinions
@@ -93,9 +94,9 @@ Provide a well-structured summary.`,
     a.click()
   }
   return (
-    <div className="w-full flex flex-col gap-8 items-center bg-[#f3f4f6] dark:bg-slate-950 min-h-screen py-10 overflow-y-scroll transition-colors">
+    <div className="w-full flex flex-col gap-8 items-center  dark:bg-slate-950 min-h-screen py-10 overflow-y-scroll transition-colors">
       <div className="w-full max-w-4xl px-4">
-        <div className="bg-white dark:bg-slate-900 shadow-lg rounded-2xl p-8 border border-gray-200 dark:border-gray-700 transition-colors">
+        <div className=" dark:bg-slate-900 shadow-lg rounded-2xl p-8 border border-gray-200 dark:border-gray-700 transition-colors">
           <h1 className="text-[#1e293b] dark:text-white text-3xl font-bold mb-6 flex items-center gap-3">
             <span className="text-2xl">
               <IoMdDocument />
@@ -139,9 +140,10 @@ Provide a well-structured summary.`,
           {error && <p className="text-orange-600 mt-2 text-sm">{error}</p>}
           <div className="flex justify-center">
             <button
+            disabled={!extractedText}
               onClick={generateSummary}
-
-              className="bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-bold px-8 py-3 rounded-lg mt-6 shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              
+              className="cursor-pointer bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-bold px-8 py-3 rounded-lg mt-6 shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               "✨ Summarize Document"
             </button>
@@ -167,14 +169,16 @@ Provide a well-structured summary.`,
           </div>
           <div className="flex justify-end mb-5">
             <button
+              disabled={!data}
               onClick={() => navigator.clipboard.writeText(data)}
-              className="bg-white hover:bg-gray-50 text-[#1e293b] border-2 border-[#1e293b] font-semibold px-6 py-2 rounded-lg mt-4 mr-3 shadow-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-white cursor-pointer hover:bg-gray-50 text-[#1e293b] border-2 border-[#1e293b] font-semibold px-6 py-2 rounded-lg mt-4 mr-3 shadow-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Copy
             </button>
             <button
+            disabled={!data}
               onClick={handleDownload}
-              className="bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-6 py-2 rounded-lg mt-4 shadow-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold cursor-pointer px-6 py-2 rounded-lg mt-4 shadow-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Download
             </button>
@@ -182,6 +186,7 @@ Provide a well-structured summary.`,
         </div>
       </div>
     </div>
+    
   );
 };
 
