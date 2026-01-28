@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    transition: background-color 0.3s ease;
+}
+
+html.dark body {
+    background-color: #0f172a;
+}
+
+/* Dark mode utility classes */
+.dark {
+    color-scheme: dark;
+}
